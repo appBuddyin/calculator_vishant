@@ -19,7 +19,8 @@ func Calculate(w http.ResponseWriter, r *http.Request) {
 		var2:     float32(operand2),
 		operator: vars["operation"],
 	}
-	result := operands.op()
+	var op Operation = operands
+	result := op.op()
 
 	fmt.Fprintf(w, "%f", result)
 

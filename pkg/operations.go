@@ -7,6 +7,7 @@ import (
 type Operation interface {
 	op() float32
 }
+
 type Variables struct {
 	var1     float32
 	var2     float32
