@@ -1,5 +1,9 @@
 package pkg
 
+import (
+	"log"
+)
+
 type Operation interface {
 	op() float32
 }
@@ -19,6 +23,9 @@ func (v Variables) op() float32 {
 	case "sub":
 		result = v.var1 - v.var2
 	case "dev":
+		if v.var2 == 0 {
+			log.Print("can't devide by zero")
+		}
 		result = v.var1 / v.var2
 	}
 	return result
