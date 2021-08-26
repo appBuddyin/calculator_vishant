@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"calculator/pkg"
+	"calculator/math"
 
 	"github.com/gorilla/mux"
 )
@@ -12,7 +12,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/calculator/{operation}/{var1:[0-9]+}/{var2:[0-9]+}", pkg.Calculate)
+	r.HandleFunc("/calculator/{operation}/{var1:[0-9]+}/{var2:[0-9]+}", math.Calculate)
 
 	srv := &http.Server{
 		Handler: r,

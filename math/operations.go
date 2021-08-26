@@ -1,4 +1,4 @@
-package pkg
+package math
 
 import (
 	"log"

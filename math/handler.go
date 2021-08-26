@@ -1,4 +1,4 @@
-package pkg
+package math
 
 import (
 	"fmt"
@@ -19,10 +19,11 @@ func Calculate(w http.ResponseWriter, r *http.Request) {
 		var2:     float32(operand2),
 		operator: vars["operation"],
 	}
-	var op Operation = operands
-	result := op.op()
 
-	fmt.Fprintf(w, "%f", result)
+	var op = GetOperation(operands.operator)
+	result := op.Op(operands)
+
+	_, _ = fmt.Println(w, "%f", result)
 
 	// fmt.Fprintf(w, "Category is: %v\n", vars["operation"])
 	// fmt.Fprintf(w, "var1 is: %v\n", vars["var1"])
