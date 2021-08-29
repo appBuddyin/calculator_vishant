@@ -23,7 +23,7 @@ func Calculate(w http.ResponseWriter, r *http.Request) {
 	var op = GetOperation(operands.operator)
 	result := op.Op(operands)
 
-	_, _ = fmt.Println(w, "%f", result)
+	_, _ = fmt.Fprintf(w, "%f", result)
 
 	// fmt.Fprintf(w, "Category is: %v\n", vars["operation"])
 	// fmt.Fprintf(w, "var1 is: %v\n", vars["var1"])
